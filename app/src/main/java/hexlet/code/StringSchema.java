@@ -12,7 +12,7 @@ public class StringSchema {
     }
 
     public StringSchema required() {
-        addCondition(s -> s instanceof String && s != null && !"".equals(s));
+        addCondition(s -> s != null && !"".equals(s));
         return this;
     }
 
