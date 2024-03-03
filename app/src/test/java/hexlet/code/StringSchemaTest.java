@@ -64,7 +64,7 @@ public class StringSchemaTest {
         assertEquals(expectedFalse, actual);
     }
 
-        @Test
+    @Test
     public void withRequiredContainsTest1() {
         schema.required();
         Boolean actual = schema.contains("what").isValid("what does tha fox say");
@@ -79,13 +79,13 @@ public class StringSchemaTest {
     }
 
     @Test
-    public void StringSchemaTest1() {
+    public void stringSchemaTest1() {
         schema.required();
         Boolean actual = schema.minLength(5).contains("what").isValid("what does tha fox say");
         assertEquals(expectedTrue, actual);
     }
     @Test
-    public void StringSchemaTest2() {
+    public void stringSchemaTest2() {
         schema.required();
         Boolean actual = schema.minLength(5).contains("whatthe").isValid("what does tha fox say");
         assertEquals(expectedFalse, actual);
