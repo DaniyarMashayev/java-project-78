@@ -31,63 +31,54 @@ public class StringSchemaTest {
 
     @Test
     public void withRequiredNullTest() {
-        schema.required();
-        Boolean actual = schema.isValid(null);
+        Boolean actual = schema.required().isValid(null);
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredEmptySpaceTest() {
-        schema.required();
-        Boolean actual = schema.isValid("");
+        Boolean actual = schema.required().isValid("");
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredTest() {
-        schema.required();
-        Boolean actual = schema.isValid("hexlet");
+        Boolean actual = schema.required().isValid("hexlet");
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredMinLength1() {
-        schema.required();
-        Boolean actual = schema.minLength(5).isValid("what does tha fox say");
+        Boolean actual = schema.required().minLength(5).isValid("what does tha fox say");
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredMinLength2() {
-        schema.required();
-        Boolean actual = schema.minLength(5).isValid("what");
+        Boolean actual = schema.required().minLength(5).isValid("what");
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredContainsTest1() {
-        schema.required();
-        Boolean actual = schema.contains("what").isValid("what does tha fox say");
+        Boolean actual = schema.required().contains("what").isValid("what does tha fox say");
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredContainsTest2() {
-        schema.required();
-        Boolean actual = schema.contains("whatthe").isValid("what does tha fox say");
+        Boolean actual = schema.required().contains("whatthe").isValid("what does tha fox say");
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void stringSchemaTest1() {
-        schema.required();
-        Boolean actual = schema.minLength(5).contains("what").isValid("what does tha fox say");
+        Boolean actual = schema.required().minLength(5).contains("what").isValid("what does tha fox say");
         assertEquals(expectedTrue, actual);
     }
     @Test
     public void stringSchemaTest2() {
-        schema.required();
-        Boolean actual = schema.minLength(5).contains("whatthe").isValid("what does tha fox say");
+        Boolean actual = schema.required().minLength(5).contains("whatthe").isValid("what does tha fox say");
         assertEquals(expectedFalse, actual);
     }
 }

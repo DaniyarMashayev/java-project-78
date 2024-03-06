@@ -26,57 +26,49 @@ public class NumberSchemaTest {
 
     @Test
     public void withRequiredNullTest() {
-        schema.required();
-        Boolean actual = schema.isValid(null);
+        Boolean actual = schema.required().isValid(null);
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredPositiveTest1() {
-        schema.required();
-        Boolean actual = schema.isValid(10);
+        Boolean actual = schema.required().isValid(10);
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredPositiveTest2() {
-        schema.positive().required();
-        Boolean actual = schema.isValid(-10);
+        Boolean actual = schema.required().positive().isValid(-10);
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredPositiveTest3() {
-        schema.positive().required();
-        Boolean actual = schema.isValid(0);
+        Boolean actual = schema.required().positive().isValid(0);
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredRangeTest1() {
-        schema.required().range(5, 10);
-        Boolean actual = schema.isValid(5);
+        Boolean actual = schema.required().range(5, 10).isValid(5);
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredRangeTest2() {
-        schema.required().range(5, 10);
-        Boolean actual = schema.isValid(10);
+        Boolean actual = schema.required().range(5, 10).isValid(10);
         assertEquals(expectedTrue, actual);
     }
 
     @Test
     public void withRequiredRangeTest3() {
-        schema.required().range(5, 10);
-        Boolean actual = schema.isValid(4);
+        Boolean actual = schema.required().range(5, 10).isValid(4);
         assertEquals(expectedFalse, actual);
     }
 
     @Test
     public void withRequiredRangeTest4() {
-        schema.required().range(5, 10);
-        Boolean actual = schema.isValid(11);
+        Boolean actual = schema.required().range(5, 10).isValid(11);
         assertEquals(expectedFalse, actual);
     }
 }
