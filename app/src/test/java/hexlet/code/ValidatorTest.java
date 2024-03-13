@@ -8,6 +8,10 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import hexlet.code.BaseSchema;
+import hexlet.code.StringSchema;
+import hexlet.code.NumberSchema;
+import hexlet.code.MapSchema;
 
 public class ValidatorTest {
     private final Validator validator = new Validator();
