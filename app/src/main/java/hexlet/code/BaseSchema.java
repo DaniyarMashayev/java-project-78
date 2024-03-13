@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class BaseSchema<T> {
+public class BaseSchema {
 
-    private final List<Predicate> totalCondition;
+    private List<Predicate> totalCondition = new ArrayList<>();
+    private boolean check;
 
-    public BaseSchema() {
-        totalCondition = new ArrayList<>();
+    public final void setRequiredOn() {
+        check = true;
     }
-
-    public Boolean isValid(Object obj) {
+    public final Boolean isValid(Object obj) {
+        if (obj == null) {
+            return !check;
+        }
         for (Predicate total: totalCondition) {
             if (!total.test(obj)) {
                 return false;
@@ -21,7 +24,7 @@ public class BaseSchema<T> {
         return true;
     }
 
-    public void addCondition(Predicate condition) {
+    public final void addCondition(Predicate condition) {
         totalCondition.add(condition);
     }
 }

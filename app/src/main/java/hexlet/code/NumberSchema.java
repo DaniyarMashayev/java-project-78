@@ -1,18 +1,19 @@
 package hexlet.code;
 
-public class NumberSchema extends BaseSchema<Integer> {
+public class NumberSchema extends BaseSchema {
 
-    public NumberSchema required() {
+    public final NumberSchema required() {
         addCondition(n -> n instanceof Integer);
+        setRequiredOn();
         return this;
     }
 
-    public NumberSchema positive() {
+    public final NumberSchema positive() {
         addCondition(n -> n instanceof Integer && (Integer) n > 0);
         return this;
     }
 
-    public NumberSchema range(int min, int max) {
+    public final NumberSchema range(int min, int max) {
         addCondition(r -> (Integer) r >= min && (Integer) r <= max);
         return this;
     }
