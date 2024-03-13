@@ -15,7 +15,7 @@ public class MapSchema extends BaseSchema {
         return this;
     }
 
-    public final MapSchema shape(Map<String, BaseSchema> schemas) {
+    public final MapSchema shape(Map<String, BaseSchema<String>> schemas) {
         addCondition(value -> schemas.entrySet().stream().allMatch(item -> {
             Object obj = ((Map) value).get(item.getKey());
             return item.getValue().isValid(obj);

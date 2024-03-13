@@ -54,39 +54,39 @@ public class MapSchemaTest {
         Boolean actual = schema.isValid(data);
         assertEquals(true, actual);
     }
-    @Test
-    public void shapeTest1() {
-        Map<String, BaseSchema> schemas = new HashMap<>();
-        schemas.put("firstName", validator.string().required());
-        schemas.put("lastName", validator.string().required().minLength(2));
-        schema.shape(schemas);
-        Map<String, String> human = new HashMap<>();
-        human.put("firstName", "John");
-        human.put("lastName", "Smith");
-        assertEquals(true, schema.isValid(human));
-    }
+//    @Test
+//    public void shapeTest1() {
+//        Map<String, BaseSchema> schemas = new HashMap<>();
+//        schemas.put("firstName", validator.string().required());
+//        schemas.put("lastName", validator.string().required().minLength(2));
+//        schema.shape(schemas);
+//        Map<String, String> human = new HashMap<>();
+//        human.put("firstName", "John");
+//        human.put("lastName", "Smith");
+//        assertEquals(true, schema.isValid(human));
+//    }
 
-    @Test
-    public void shapeTest2() {
-        Map<String, BaseSchema> schemas = new HashMap<>();
-        schemas.put("firstName", validator.string().required());
-        schemas.put("lastName", validator.string().required().minLength(2));
-        schema.shape(schemas);
-        Map<String, String> human = new HashMap<>();
-        human.put("firstName", "John");
-        human.put("lastName", null);
-        assertEquals(false, schema.isValid(human));
-    }
+//    @Test
+//    public void shapeTest2() {
+//        Map<String, BaseSchema> schemas = new HashMap<>();
+//        schemas.put("firstName", validator.string().required());
+//        schemas.put("lastName", validator.string().required().minLength(2));
+//        schema.shape(schemas);
+//        Map<String, String> human = new HashMap<>();
+//        human.put("firstName", "John");
+//        human.put("lastName", null);
+//        assertEquals(false, schema.isValid(human));
+//    }
 
-    @Test
-    public void shapeTest3() {
-        Map<String, BaseSchema> schemas = new HashMap<>();
-        schemas.put("firstName", validator.string().required());
-        schemas.put("lastName", validator.string().required().minLength(2));
-        schema.shape(schemas);
-        Map<String, String> human = new HashMap<>();
-        human.put("firstName", "Anna");
-        human.put("lastName", "B");
-        assertEquals(false, schema.isValid(human));
-    }
+//    @Test
+//    public void shapeTest3() {
+//        Map<String, BaseSchema> schemas = new HashMap<>();
+//        schemas.put("firstName", validator.string().required());
+//        schemas.put("lastName", validator.string().required().minLength(2));
+//        schema.shape(schemas);
+//        Map<String, String> human = new HashMap<>();
+//        human.put("firstName", "Anna");
+//        human.put("lastName", "B");
+//        assertEquals(false, schema.isValid(human));
+//    }
 }

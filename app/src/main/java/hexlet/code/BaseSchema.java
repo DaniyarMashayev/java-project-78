@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class BaseSchema {
+public class BaseSchema<T> {
 
     private List<Predicate> totalCondition = new ArrayList<>();
     private boolean check;
