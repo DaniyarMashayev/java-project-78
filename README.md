@@ -6,4 +6,4 @@
 
 Это третий проект на курсе Хекслета по Java. Проект "валидатор данных" позволяет проверить корректность данных, в проект применяется  fluent interface. За основу проекта взята библиотека  yup.
 
-This is the third project in Hexlet's Java course. The project "data validator" allows you to check the correctness of data, the project uses fluent interface. The project is based on the yup library.This is the third project in Hexlet's Java course. The project "data validator" allows you to check the correctness of data, the project uses a fluent interface. The project is based on the yup library.
+This is the third project in Hexlet's Java course. The project "data validator" allows you to check the correctness of data, the project uses a fluent interface. The project is based on the yup library.
