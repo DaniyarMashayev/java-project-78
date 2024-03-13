@@ -64,7 +64,8 @@ public class MapSchemaTest {
         human.put("firstName", "John");
         human.put("lastName", "Smith");
         assertEquals(true, schema.isValid(human));
-}
+    }
+
     @Test
     public void shapeTest2() {
         Map<String, BaseSchema> schemas = new HashMap<>();
