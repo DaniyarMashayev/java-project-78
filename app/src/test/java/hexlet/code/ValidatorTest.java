@@ -12,7 +12,7 @@ public class ValidatorTest {
     private final Validator validator = new Validator();
 
     @Test
-    public void StringSchemaTest() {
+    public void stringSchemaTest() {
         StringSchema schema = validator.string();
         assertTrue(schema.isValid(""));
         assertTrue(schema.isValid(null));
@@ -30,7 +30,7 @@ public class ValidatorTest {
     }
 
     @Test
-    public void NumberSchemaTest() {
+    public void numberSchemaTest() {
         NumberSchema schema = validator.number();
         assertTrue(schema.isValid(5));
         assertTrue(schema.isValid(null));
@@ -52,7 +52,7 @@ public class ValidatorTest {
     }
 
     @Test
-    public void MapSchemaTest() {
+    public void mapSchemaTest() {
         MapSchema schema = validator.map();
         assertTrue(schema.isValid(null));
 
