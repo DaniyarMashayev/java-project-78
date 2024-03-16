@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class BaseSchema<T> {
 
-    private List<Predicate> totalCondition = new ArrayList<>();
+    private final List<Predicate<T>> totalCondition = new ArrayList<>();
     private boolean check;
 
     public final void setRequiredOn() {
@@ -24,7 +24,7 @@ public class BaseSchema<T> {
         return true;
     }
 
-    public final void addCondition(Predicate condition) {
+    public final void addCondition(Predicate<T> condition) {
         totalCondition.add(condition);
     }
 }
